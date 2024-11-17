@@ -17,3 +17,4 @@ class FlaskWrapper(object):
 
     def run(self, **kwargs):
         self.app.run(**kwargs)
+
