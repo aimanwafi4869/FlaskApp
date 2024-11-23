@@ -126,3 +126,177 @@
 #         print('A')
 #     case 'b':
 #         print('B')
+
+# a = 'babbabababa'
+# for i in range(10,2,-2):
+#     print(a)
+# else:
+#     print('vavasv')
+
+# fruits = ['apples','banana','cherry']
+
+# for x in fruits:
+#     print(x)
+#     if x == 'banana':
+#         break
+
+# for x in fruits:
+#     if x == 'banana':
+#         break
+#     print(x)
+
+# numbers = []
+
+# num_count = int(input('How many numbers ? '))
+# for i in range(num_count):
+#     num = int(input('Enter number : '))
+#     numbers.append(num)
+
+# smallest = numbers[0]
+
+# for num in numbers:
+#     if num < smallest:
+#         smallest = num
+
+# print('The smallest number is ', smallest)
+
+
+#Exercise 1 - Sum all number 1 - n
+# n = int(input('Enter number : '))
+# sum = 0
+# for i in range(1,n+1):
+#     sum += i
+# print(sum)
+
+
+
+#Exercise 2 - Count Vowels in a sentence
+# word = input('Enter any word : ').lower()
+# totalVowel = 0
+# vowelA = 0
+# vowelE = 0
+# vowelI = 0
+# vowelO = 0
+# vowelU = 0
+
+# for w in word:
+#     if w == 'a':
+#         vowelA+=1
+#         totalVowel+=1
+#     elif w == 'e':
+#         vowelE+=1
+#         totalVowel+=1
+#     elif w == 'i':
+#         vowelI+=1
+#         totalVowel+=1
+#     elif w == 'o':
+#         vowelO+=1
+#         totalVowel+=1
+#     elif w == 'u':
+#         vowelU+=1
+#         totalVowel+=1
+
+# print('Vowel A :', vowelA)
+# print('Vowel E :', vowelE)
+# print('Vowel I :', vowelI)
+# print('Vowel O :', vowelO)
+# print('Vowel U :', vowelU)
+# print('Total Vowel', totalVowel)
+
+# #Exercise 3 - Multiplication Table for n * 1 - 10
+ 
+# n = int(input('Enter number : '))
+# for i in range(1,11):
+#     print(f'{n} x {i} = {n * i}')
+
+
+#Exercise 4 - Reverse String
+ 
+# print(input('Enter any word : ')[::-1])
+# text = input('Enter any word : ')
+# reverse = ""
+# for i in range(1, len(text) + 1):
+#     reverse += text[len(text) - i]
+
+# print(reverse)
+
+
+# n = 1
+
+# while n <= 5:
+#     print(str(n) * n)
+#     n+=1
+
+
+
+# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.datasets import load_iris
+# from sklearn.model_selection import train_test_split
+# from sklearn.metrics import accuracy_score, classification_report
+# import pandas as pd
+
+# # Load the Iris dataset
+# # data = load_iris()
+# # X = data.data  # Features
+# # y = data.target  # Labels
+
+# dataset = pd.read_csv('/home/aiman/Documents/FlaskApp/dataset/dataset(Hackathon).csv')
+# # print(dataset.head())
+# xData = dataset.iloc[:,1:]
+# yData = dataset.iloc[:,0:1]
+# # print(xData)
+# # print(yData)
+
+# # Split data into training and test sets
+# X_train, X_test, y_train, y_test = train_test_split(xData, yData, test_size=0.3, random_state=100)
+
+# # Initialize the Random Forest Classifier
+# rf_classifier = RandomForestClassifier(n_estimators=100, random_state=100)
+
+# # Train the model
+# rf_classifier.fit(X_train, y_train)
+
+# # Make predictions
+# y_pred = rf_classifier.predict(X_test)
+# # print(X_test)
+# # print(y_test)
+# # print(y_pred)
+# print(X_test)
+# print('\n\n\n\n\n\n')
+# print(y_pred)
+# # Evaluate the model
+# print("Accuracy:", accuracy_score(y_test, y_pred))
+# print("\nClassification Report:\n", classification_report(y_test, y_pred))
+
+# Exercise 1 - Countdown Timer
+
+
+
+# Exercise 2 - Password Checker
+# password = 'python123'
+# saman = 0 
+# while True:
+#     inputPassword = input('Enter password : ')
+
+#     if inputPassword == password:
+#         break
+#     saman+=10
+#     print('Saman 10 ringgit')
+
+# print('Correct Password - Jumlah Saman RM',saman)
+
+
+i = 0
+while i < 4:
+    j = 0
+    while j < 4:
+        print('*',end='')
+        j+=1
+    print()
+    i+=1
+
+max = 5
+for a in range(max):
+    for b in range(a):
+        print('*',end='')
+    print()

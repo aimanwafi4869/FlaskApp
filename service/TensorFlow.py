@@ -5,9 +5,10 @@ import tensorflow as tf
 
 class TensorFlow:
     def __init__(self):
-        self.saved_path = 'model_path_location'
-        self.model = tf.saved_model.load(self.saved_path)
-        self.predict = self.model.signatures["serving_default"] 
+        # self.saved_path = 'model_path_location'
+        # self.model = tf.saved_model.load(self.saved_path)
+        # self.predict = self.model.signatures["serving_default"] 
+        pass
 
     def createModel(self):
         model = keras.Sequential([

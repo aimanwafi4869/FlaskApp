@@ -8,3 +8,9 @@ flask run
 
 To run Flask Server with hot reload use this command
 flask --debug run
+
+To create new AI Model
+remove the existing model in the '/model' directory 
+
+Working AI Model
+Sklearn - Random Forest
