@@ -19,8 +19,14 @@ class ScikitLearn:
 
     def createModel(self):
         # Initialize the Random Forest Classifier
-        rf_classifier = RandomForestClassifier(n_estimators=100, random_state=100)
+
+        rf_classifier = RandomForestClassifier(max_depth=9, 
+                                    max_features="log2", 
+                                    max_leaf_nodes=9, 
+                                    n_estimators=25)
+
         self.model = rf_classifier
+        
         self.defaultTrain()
         joblib.dump(self.model, 'model/random_forest_model.pkl')
     
