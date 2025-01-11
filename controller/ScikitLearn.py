@@ -1,16 +1,13 @@
 from flask import Blueprint, request, jsonify
 import service.ScikitLearn as service
 
-aiApp = service.ScikitLearn()
+dataset = 'dataset/fish_landings.csv'
+modelType = 'linearRegression'
+aiApp = service.ScikitLearn(modelType,dataset)
 
 class ScikitLearnAiClass(object):
 
     controller = Blueprint("scikit", __name__, url_prefix="/api/ai/sklearn")
-
-    @controller.route("/initialize")
-    def initializeAi():
-        aiApp.a = 'initialize'
-        return 'initialize'
 
     @controller.route("/change/<value>")
     def changeAi(value):
@@ -23,22 +20,17 @@ class ScikitLearnAiClass(object):
         aiApp.a = data
         return aiApp.a
     
-    @controller.route("/print")
-    def valueAi():
-        return aiApp.a
-    
     @controller.route("/train")
     def trainAi():
         return aiApp.train()
     
     @controller.route("/accuracy")
     def accuracyAi():
-        aiApp.accuracy()
-        return '200 OK\n'
+        return aiApp.accuracy()
 
     @controller.route("/predict", methods=['POST'])
     def predict():
-        data = request.get_json('param')
-        print(dict(data).get('param'))
-        prediction = aiApp.predict(dict(data).get('param'))
-        return f'{{"prediction":"{prediction}"}}'
+        data = request.get_json('date')
+        print(dict(data).get('date'))
+        prediction = aiApp.predict(dict(data).get('date'))
+        return f'{{"prediction":"{prediction}"}}\n'

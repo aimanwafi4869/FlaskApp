@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
-import service.TensorFlow as service
+import service.Ultralytics as service
 
-aiApp = service.TensorFlow()
+aiApp = service.Ultralytics()
 
 class UltralyticsAiClass(object):
 
